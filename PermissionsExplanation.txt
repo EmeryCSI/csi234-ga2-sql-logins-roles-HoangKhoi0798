@@ -1,0 +1,42 @@
+1. Types of Permissions Assigned
+SELECT: Allow user to read or query data from a table or view. The most basic level of access.
+INSERT: Allows a user to add new rows of data into a table.
+UPDATE: Enables a user to modify existing data within a table.
+DELETE: Permits a user to remove rows of data from a table.
+
+
+2. Schema-Level vs. Table-Level Permissions
+Schema-Level Permissions: When you grant permissions on a SCHEMA (GA1), 
+the user automatically inherits permissions for current
+and later objects in that schema.
+
+Table-Level Permissions: Apply only to a specific table.
+Used when a user needs access to one specific dataset but shoud not be allowed in anything else.
+
+
+3. Column-Level Permissions
+How they work: Allows administrator to grant or deny access to specific columns in a table.
+
+Why they are useful: They protect sensitive data while still allow users to do their jobs
+with parts that are not sensitive.
+
+
+4. The Principle of Least Privilege (PoLP)
+The Principle of Least Privilege states that a user should be given the minimum
+access or permissions needed to perform their job.
+
+Application:
+
+The "SalesRepUser" was given SELECT but denied Salary,
+because their job doesn't require knowing payroll.
+
+The ITSupportUser can update names and departments for maintenance
+but is blocked from changing salaries to prevent financial fraud.
+
+
+5. Security Benefits of Using Roles
+
+For exmple, if 10 new HR employees are hired, you can add them to the HRRole
+without having to give permission to each one. It also ensures that every person in a specific job
+has the same permissions, without missing or going over usual permission. You can also check out what
+an entire group can do easier than going through each and every single person at a time.
